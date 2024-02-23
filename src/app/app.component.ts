@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
+import { Location } from './types/location-interface';
+import { GetUnitsService } from './services/get-units.service';
 
 
 
@@ -12,5 +14,10 @@ export class AppComponent {
   showList = new BehaviorSubject(false);
   unitsList: Location[] = [];
 
-  constructor(){ }
+  constructor(private unitService: GetUnitsService){ }
+
+  onSubmit() {
+    this.unitsList = this.unitService.getFilteredUnits();
+    this.showList.next(true);
+  }
 }

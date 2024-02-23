@@ -1,3 +1,4 @@
+import { CardListComponent } from './components/card-list/card-list.component';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -10,21 +11,23 @@ import { CommonModule } from '@angular/common';
 import { AppComponent } from './app.component';
 
 
-@NgModule({
-  declarations: [
-    AppComponent,
-    HeaderComponent,
-    FormsComponent,
 
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    ReactiveFormsModule,
-    HttpClientModule,
-    CommonModule
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+
+@NgModule({
+    declarations: [
+        AppComponent,
+        HeaderComponent,
+        FormsComponent,
+    ],
+    providers: [],
+    bootstrap: [AppComponent],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        ReactiveFormsModule,
+        HttpClientModule,
+        CommonModule,
+        CardListComponent
+    ]
 })
 export class AppModule { }
